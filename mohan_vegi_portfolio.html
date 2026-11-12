@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mohan Vegi — B.Tech student and aspiring web developer.">
+  <title>Mohan Vegi | Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1020; --panel: #121a2e; --panel2: #17223a;
+      --text: #eef3ff; --muted: #aab6cf; --accent: #78a9ff;
+      --accent2: #8be3d0; --line: rgba(255,255,255,.10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--text);
+      background: radial-gradient(circle at 80% 0%, #1b3155 0, transparent 32%), var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1080px, calc(100% - 40px)); margin: auto; }
+    header { padding: 22px 0; border-bottom: 1px solid var(--line); }
+    nav { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .brand { font-weight: 800; letter-spacing: .4px; font-size: 1.1rem; }
+    .brand span { color: var(--accent); }
+    .navlinks { display: flex; gap: 22px; color: var(--muted); font-size: .92rem; }
+    .navlinks a:hover, .textlink:hover { color: var(--accent2); }
+    .hero { padding: 94px 0 78px; display: grid; grid-template-columns: 1.5fr .8fr; gap: 42px; align-items: center; }
+    .eyebrow { color: var(--accent2); text-transform: uppercase; letter-spacing: 2px; font-size: .78rem; font-weight: 800; }
+    h1 { font-size: clamp(2.7rem, 7vw, 5rem); line-height: 1.05; margin: 14px 0 18px; letter-spacing: -2px; }
+    h1 span { color: var(--accent); }
+    .intro { max-width: 650px; color: var(--muted); font-size: 1.12rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn { display: inline-block; padding: 11px 18px; border-radius: 10px; font-weight: 750; border: 1px solid var(--line); }
+    .primary { background: var(--accent); color: #081225; border-color: var(--accent); }
+    .secondary { background: rgba(255,255,255,.04); }
+    .profile-card { background: linear-gradient(145deg, #1b2b49, #11192b); border: 1px solid var(--line); padding: 28px; border-radius: 22px; box-shadow: 0 24px 70px rgba(0,0,0,.22); }
+    .avatar { width: 86px; height: 86px; border-radius: 24px; display: grid; place-items: center; font-size: 2rem; font-weight: 900; color: #091426; background: linear-gradient(135deg, var(--accent), var(--accent2)); }
+    .profile-card h2 { margin: 18px 0 2px; }
+    .profile-card p { margin: 0; color: var(--muted); }
+    .mini { display: flex; justify-content: space-between; gap: 12px; padding-top: 17px; margin-top: 17px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+    section { padding: 54px 0; }
+    .section-head { margin-bottom: 24px; }
+    .section-head h2 { font-size: 2rem; margin: 4px 0; letter-spacing: -.7px; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .card { background: var(--panel); border: 1px solid var(--line); padding: 24px; border-radius: 16px; }
+    .card h3 { margin: 0 0 8px; }
+    .card p { margin: 0; color: var(--muted); }
+    .tags { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+    .tag { padding: 6px 11px; border: 1px solid var(--line); border-radius: 999px; color: #d5e2fa; font-size: .84rem; background: rgba(255,255,255,.035); }
+    .project-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .status { color: var(--accent2); font-size: .78rem; font-weight: 800; }
+    .contact { background: linear-gradient(145deg, #152440, #11192b); border: 1px solid var(--line); border-radius: 20px; padding: 30px; }
+    .contact p { color: var(--muted); }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 20px; }
+    .textlink { color: var(--accent); font-weight: 700; }
+    footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; text-align: center; }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding: 66px 0 48px; }
+      .profile-card { max-width: 440px; }
+      .grid { grid-template-columns: 1fr; }
+      .navlinks { gap: 12px; font-size: .82rem; }
+    }
+    @media (max-width: 430px) {
+      .wrap { width: min(100% - 28px, 1080px); }
+      .navlinks { gap: 9px; }
+      .navlinks a { font-size: .76rem; }
+      h1 { letter-spacing: -1.2px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap">
+      <a class="brand" href="#home">MOHAN<span>.</span></a>
+      <div class="navlinks">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">B.Tech Student · Aspiring Web Developer</div>
+        <h1>Hi, I'm<br><span>Mohan Vegi.</span></h1>
+        <p class="intro">I’m a B.Tech student learning to build useful web applications. I enjoy turning ideas into clean, practical projects and improving my skills through hands-on development.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore my work</a>
+          <a class="btn secondary" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <aside class="profile-card">
+        <div class="avatar">MV</div>
+        <h2>Mohan Vegi</h2>
+        <p>B.Tech Student</p>
+        <div class="mini"><span>Focus</span><strong>Web Development</strong></div>
+        <div class="mini"><span>Currently building</span><strong>MyBlog</strong></div>
+      </aside>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">A little about me</div><h2>About Me</h2></div>
+        <div class="card">
+          <p>I’m a B.Tech student developing my skills in frontend and backend web development. I like learning by building projects, solving problems, and understanding how applications work from the user interface to the database. My current project is <strong>MyBlog</strong>, a blog application built with Node.js, Express, and MongoDB.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">What I'm learning</div><h2>Skills & Technologies</h2><p>Technologies used in my current learning and project work.</p></div>
+        <div class="card">
+          <div class="tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+            <span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MongoDB</span>
+            <span class="tag">Git</span><span class="tag">GitHub</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Things I've worked on</div><h2>Featured Project</h2></div>
+        <article class="card">
+          <div class="project-top"><h3>MyBlog – Blog Application</h3><span class="status">In progress</span></div>
+          <p>A web application where users can register, log in, create blog posts, and view blog content. The backend uses Node.js and Express, with MongoDB for data storage.</p>
+          <div class="tags"><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MongoDB</span><span class="tag">HTML/CSS/JS</span></div>
+          <p style="margin-top:18px"><span style="color:var(--muted)">GitHub:</span> <span style="color:var(--muted)">Add your repository URL here</span></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact">
+          <div class="eyebrow">Let's connect</div>
+          <h2>Have a project or opportunity?</h2>
+          <p>I’m interested in learning, collaborating, and building useful projects. You can reach me through the links below.</p>
+          <div class="contact-links">
+            <a class="textlink" href="mailto:YOUR_EMAIL@example.com">Email</a>
+            <a class="textlink" href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener">GitHub</a>
+            <a class="textlink" href="https://www.linkedin.com/in/YOUR_LINKEDIN/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+          <p style="font-size:.82rem;margin-top:20px">Before publishing, replace the sample email and profile links with your real links.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>© <span id="year"></span> Mohan Vegi · Personal Portfolio</footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
